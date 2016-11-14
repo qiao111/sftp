@@ -195,7 +195,9 @@ public class ConfigController {
 			sftp.login();//登录
 			try {
 				sftp.upload("/opt", savePath + name + ".zip");
-			} catch (FileNotFoundException | SftpException e) {
+			} catch (FileNotFoundException e1){
+				e1.printStackTrace();
+			}catch( SftpException e) {
 				e.printStackTrace();
 			}
 			sftp.logout();
